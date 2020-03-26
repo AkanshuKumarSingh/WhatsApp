@@ -9,4 +9,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style
+        name="AlertDialog"
+        parent="Base.Theme.AppCompat.Light.Dialog">
+    </style>
+
 </resources>
