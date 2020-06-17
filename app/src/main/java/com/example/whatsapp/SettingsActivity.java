@@ -109,6 +109,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         if(requestCode == GalleryPick && resultCode == RESULT_OK && data != null){
             Uri imageUri = data.getData();
+            Log.d("Main1", "onActivityResult: \ndata : " + data.toString() + "\nimageUri : " + imageUri.toString());
             CropImage.activity()
                     .setGuidelines(CropImageView.Guidelines.ON)
                     .setAspectRatio(1,1)
@@ -126,7 +127,11 @@ public class SettingsActivity extends AppCompatActivity {
                 loadingBar.show();
 
                 Uri resultUri = result.getUri();
+
+
                 final StorageReference filePath = UserProfileImageRef.child(currentUserId + ".jpg");
+
+                Log.d("Main2", "onActivityResult: \nresultUri : " + resultUri.toString() + "\nfilePath : " + filePath.toString());
 
                 filePath.putFile(resultUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
 
@@ -154,7 +159,6 @@ public class SettingsActivity extends AppCompatActivity {
                                                         String message = task.getException().toString();
                                                         Toast.makeText(SettingsActivity.this, "Error : " + message, Toast.LENGTH_SHORT).show();
                                                         loadingBar.dismiss();
-
                                                     }
                                                 }
                                             });
@@ -162,7 +166,8 @@ public class SettingsActivity extends AppCompatActivity {
                                 }
                             });
 
-                        }else{
+                        }
+                        else{
                             String message = task.getException().toString();
                             Toast.makeText(SettingsActivity.this, "Error : " + message, Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();

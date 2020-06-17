@@ -111,7 +111,6 @@ public class RegisterActivity extends AppCompatActivity {
         UserEmail = findViewById(R.id.register_email);
         UserPassword = findViewById(R.id.register_password);
         AlreadyHaveAccountLink = findViewById(R.id.already_have_account_link);
-
         loadingBar = new ProgressDialog(this);
     }
 

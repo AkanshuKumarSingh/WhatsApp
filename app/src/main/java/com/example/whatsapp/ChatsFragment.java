@@ -1,6 +1,5 @@
 package com.example.whatsapp;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -26,7 +25,6 @@ import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -42,7 +40,6 @@ public class ChatsFragment extends Fragment {
     public ChatsFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
